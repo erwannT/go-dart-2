@@ -1,6 +1,7 @@
 # go-dart
 
 [![Build Status](https://travis-ci.org/Zenika/go-dart.svg?branch=master)](https://travis-ci.org/Zenika/go-dart)
+[![Coverage Status](https://coveralls.io/repos/github/Zenika/go-dart/badge.svg?branch=master)](https://coveralls.io/github/Zenika/go-dart?branch=master)
 
 # Contributors
 
