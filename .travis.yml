@@ -16,4 +16,7 @@ install:
 
 script:
   - go test -v $(glide novendor)
+  - go test -v -covermode=count -coverprofile=coverage.out ./server/
+
+after_success:
   - goveralls -coverprofile=coverage.out -service=travis-ci
