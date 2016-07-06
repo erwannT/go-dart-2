@@ -18,6 +18,7 @@ dependencies:
     #- go get -t -d -v ./...
     - npm install webapp
     #- bower install
+    - echo $(pwd)
     - glide install
   post:
     - esc -o server/statics.go -pkg="server" -prefix="webapp/dist" webapp/dist
