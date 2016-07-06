@@ -12,7 +12,7 @@ dependencies:
     - go get github.com/mattn/goveralls
     - go get -v github.com/mjibson/esc
   override:
-    - ln -s ~/$CIRCLE_PROJECT_REPONAME ~/.go_workspace/src/$CIRCLE_PROJECT_REPONAME
+    - cp -r ~/$CIRCLE_PROJECT_REPONAME ~/.go_workspace/src/$CIRCLE_PROJECT_REPONAME
     #- mkdir -p "$GOPATH/src/$IMPORT_PATH"
     #- rsync -azC --delete ./ "$GOPATH/src/$IMPORT_PATH/"
     #- go get -t -d -v ./...
