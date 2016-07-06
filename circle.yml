@@ -5,7 +5,6 @@ machine:
     IMPORT_PATH: "github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME"
 dependencies:
   pre:
-    - go get github.com/tools/godep
     - npm install -g bower
     - yes | sudo add-apt-repository ppa:masterminds/glide && sudo apt-get update
     - sudo apt-get install glide
