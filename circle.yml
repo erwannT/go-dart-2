@@ -22,6 +22,8 @@ dependencies:
     - cd ~/.go_workspace/src/$CIRCLE_PROJECT_REPONAME && glide install
   post:
     #- esc -o server/statics.go -pkg="server" -prefix="webapp/dist" webapp/dist
+    - echo $(pwd)
+    - cd ~/.go_workspace/src/$CIRCLE_PROJECT_REPONAME
     - go build -v main.go # statics.go
 test:
   pre:
