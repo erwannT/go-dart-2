@@ -15,9 +15,9 @@ dependencies:
     - ln -s ~/$CIRCLE_PROJECT_REPONAME ~/.go_workspace/src/$CIRCLE_PROJECT_REPONAME
     #- mkdir -p "$GOPATH/src/$IMPORT_PATH"
     #- rsync -azC --delete ./ "$GOPATH/src/$IMPORT_PATH/"
-    - go get -t -d -v ./...
+    #- go get -t -d -v ./...
     - npm install webapp
-    - bower install
+    #- bower install
     - glide install
   post:
     - esc -o server/statics.go -pkg="server" -prefix="webapp/dist" webapp/dist
