@@ -2,7 +2,6 @@ machine:
   node:
     version: 5.1.0
   environment:
-    #IMPORT_PATH: "github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME"
     GOPATH: $GOPATH:$HOME/$CIRCLE_PROJECT_REPONAME
 dependencies:
   pre:
@@ -13,18 +12,11 @@ dependencies:
     - go get github.com/mattn/goveralls
     - go get github.com/mjibson/esc
   override:
-    #- cp -r ~/$CIRCLE_PROJECT_REPONAME ~/.go_workspace/src/$CIRCLE_PROJECT_REPONAME
-    #- mkdir -p "$GOPATH/src/$IMPORT_PATH"
-    #- rsync -azC --delete ./ "$GOPATH/src/$IMPORT_PATH/"
-    #- go get -t -d -v ./...
     - npm install webapp
     #- bower install
-    #- echo $(pwd)
     - cd ~/.go_workspace/src/$CIRCLE_PROJECT_REPONAME && glide install
   post:
     #- esc -o server/statics.go -pkg="server" -prefix="webapp/dist" webapp/dist
-    #- echo $(pwd)
-    #- cd ~/.go_workspace/src/$CIRCLE_PROJECT_REPONAME
     - go build -v main.go # statics.go
 test:
   pre:
