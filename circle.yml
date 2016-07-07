@@ -4,8 +4,6 @@ machine:
   environment:
     #IMPORT_PATH: "github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME"
     GOPATH: $GOPATH:$HOME/$CIRCLE_PROJECT_REPONAME
-  post:
-    - echo $GOPATH
 dependencies:
   pre:
     - npm install -g bower
@@ -14,8 +12,6 @@ dependencies:
     - go get golang.org/x/tools/cmd/cover
     - go get github.com/mattn/goveralls
     - go get github.com/mjibson/esc
-    - export GOPATH=$GOPATH:$HOME/$CIRCLE_PROJECT_REPONAME
-    - echo $GOPATH
   override:
     #- cp -r ~/$CIRCLE_PROJECT_REPONAME ~/.go_workspace/src/$CIRCLE_PROJECT_REPONAME
     #- mkdir -p "$GOPATH/src/$IMPORT_PATH"
@@ -24,9 +20,7 @@ dependencies:
     - npm install webapp
     #- bower install
     #- echo $(pwd)
-    #- cd ~/.go_workspace/src/$CIRCLE_PROJECT_REPONAME && glide install
-    - echo $GOPATH
-    - glide install
+    - cd ~/.go_workspace/src/$CIRCLE_PROJECT_REPONAME && glide install
   post:
     #- esc -o server/statics.go -pkg="server" -prefix="webapp/dist" webapp/dist
     #- echo $(pwd)
