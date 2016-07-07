@@ -12,6 +12,7 @@ dependencies:
     - go get github.com/mattn/goveralls
     - go get github.com/mjibson/esc
     - export GOPATH=$GOPATH:$HOME/$CIRCLE_PROJECT_REPONAME
+    - echo $GOPATH
   override:
     #- cp -r ~/$CIRCLE_PROJECT_REPONAME ~/.go_workspace/src/$CIRCLE_PROJECT_REPONAME
     #- mkdir -p "$GOPATH/src/$IMPORT_PATH"
@@ -21,6 +22,7 @@ dependencies:
     #- bower install
     #- echo $(pwd)
     #- cd ~/.go_workspace/src/$CIRCLE_PROJECT_REPONAME && glide install
+    - echo $GOPATH
     - glide install
   post:
     #- esc -o server/statics.go -pkg="server" -prefix="webapp/dist" webapp/dist
